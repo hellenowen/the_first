@@ -1,3 +1,6 @@
+About one Python program.
+
+
 class Chain(object):
     def __init__(self, path=''):
         self.__path = path
@@ -13,5 +16,6 @@ class Chain(object):
 c=Chain()
 print callable(c)
 print c.users('Michael').repos
+
 
 Why c is not callable?The result is False of line 14.So the next line is wrong.
