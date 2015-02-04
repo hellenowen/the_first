@@ -1,0 +1,17 @@
+class Chain(object):
+    def __init__(self, path=''):
+        self.__path = path
+    def __getattr__(self, path):
+		print 'self.__path:%s , path:%s' % (self.__path,path)
+		return Chain('%s/%s' % (self.__path,path))
+    def __str__(self):
+        return self.__path
+	def __call__(self,arg0=''):
+		print '__call__%s(%s)' % (self.__path,path)
+		return Chain('%s/%s' % (self.__path,arg0))
+		
+c=Chain()
+print callable(c)
+print c.users('Michael').repos
+
+Why c is not callable?The result is False of line 14.So the next line is wrong.
